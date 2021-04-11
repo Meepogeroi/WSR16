@@ -1,0 +1,18 @@
+﻿<Page x:Class="WSR16.Pages.RegAsRunnerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSR16.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegAsRunnerPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="OldRunnerButton" Content="Я участвовал ранее" Width="200" Height="50" Margin="10"/>
+            <Button x:Name="NewRunnerButton" Content="Я новый участник" Width="200" Height="50" Margin="10"/>
+        </StackPanel>
+        <Button x:Name="LoginButton" Content="Login" Grid.Row="1" Width="50" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20"/>
+    </Grid>
+</Page>
