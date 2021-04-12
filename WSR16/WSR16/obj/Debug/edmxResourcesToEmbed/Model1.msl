@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище nikitaModelContainer" CdmEntityContainer="DB">
+    <EntitySetMapping Name="Charity">
+      <EntityTypeMapping TypeName="nikitaModel.Charity">
+        <MappingFragment StoreEntitySet="Charity">
+          <ScalarProperty Name="CharityId" ColumnName="CharityId" />
+          <ScalarProperty Name="CharityName" ColumnName="CharityName" />
+          <ScalarProperty Name="CharityDescription" ColumnName="CharityDescription" />
+          <ScalarProperty Name="CharityLogo" ColumnName="CharityLogo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="nikitaModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryFlag" ColumnName="CountryFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event">
+      <EntityTypeMapping TypeName="nikitaModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+          <ScalarProperty Name="MarathonId" ColumnName="MarathonId" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="MaxParticipants" ColumnName="MaxParticipants" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventType">
+      <EntityTypeMapping TypeName="nikitaModel.EventType">
+        <MappingFragment StoreEntitySet="EventType">
+          <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+          <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="nikitaModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="Gender1" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marathon">
+      <EntityTypeMapping TypeName="nikitaModel.Marathon">
+        <MappingFragment StoreEntitySet="Marathon">
+          <ScalarProperty Name="MarathonId" ColumnName="MarathonId" />
+          <ScalarProperty Name="MarathonName" ColumnName="MarathonName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="YearHeld" ColumnName="YearHeld" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Position">
+      <EntityTypeMapping TypeName="nikitaModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="PositionDescription" ColumnName="PositionDescription" />
+          <ScalarProperty Name="PayPeriod" ColumnName="PayPeriod" />
+          <ScalarProperty Name="PayRate" ColumnName="PayRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RaceKitOption">
+      <EntityTypeMapping TypeName="nikitaModel.RaceKitOption">
+        <MappingFragment StoreEntitySet="RaceKitOption">
+          <ScalarProperty Name="RaceKitOptionId" ColumnName="RaceKitOptionId" />
+          <ScalarProperty Name="RaceKitOption1" ColumnName="RaceKitOption" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registration">
+      <EntityTypeMapping TypeName="nikitaModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+          <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
+          <ScalarProperty Name="RegistrationDateTime" ColumnName="RegistrationDateTime" />
+          <ScalarProperty Name="RaceKitOptionId" ColumnName="RaceKitOptionId" />
+          <ScalarProperty Name="RegistrationStatusId" ColumnName="RegistrationStatusId" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="CharityId" ColumnName="CharityId" />
+          <ScalarProperty Name="SponsorshipTarget" ColumnName="SponsorshipTarget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationEvent">
+      <EntityTypeMapping TypeName="nikitaModel.RegistrationEvent">
+        <MappingFragment StoreEntitySet="RegistrationEvent">
+          <ScalarProperty Name="RegistrationEventId" ColumnName="RegistrationEventId" />
+          <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="BibNumber" ColumnName="BibNumber" />
+          <ScalarProperty Name="RaceTime" ColumnName="RaceTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationStatus">
+      <EntityTypeMapping TypeName="nikitaModel.RegistrationStatus">
+        <MappingFragment StoreEntitySet="RegistrationStatus">
+          <ScalarProperty Name="RegistrationStatusId" ColumnName="RegistrationStatusId" />
+          <ScalarProperty Name="RegistrationStatus1" ColumnName="RegistrationStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="nikitaModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Runner">
+      <EntityTypeMapping TypeName="nikitaModel.Runner">
+        <MappingFragment StoreEntitySet="Runner">
+          <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sponsorship">
+      <EntityTypeMapping TypeName="nikitaModel.Sponsorship">
+        <MappingFragment StoreEntitySet="Sponsorship">
+          <ScalarProperty Name="SponsorshipId" ColumnName="SponsorshipId" />
+          <ScalarProperty Name="SponsorName" ColumnName="SponsorName" />
+          <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="nikitaModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timesheet">
+      <EntityTypeMapping TypeName="nikitaModel.Timesheet">
+        <MappingFragment StoreEntitySet="Timesheet">
+          <ScalarProperty Name="TimesheetId" ColumnName="TimesheetId" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="nikitaModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Volunteer">
+      <EntityTypeMapping TypeName="nikitaModel.Volunteer">
+        <MappingFragment StoreEntitySet="Volunteer">
+          <ScalarProperty Name="VolunteerId" ColumnName="VolunteerId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

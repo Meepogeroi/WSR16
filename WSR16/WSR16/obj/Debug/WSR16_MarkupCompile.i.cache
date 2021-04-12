@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Некит\source\repos\WSR16\WSR16\obj\Debug\
+C:\src\WSR16\WSR16\WSR16\obj\Debug\
 WSR16
 none
 false
 DEBUG;TRACE
-C:\Users\Некит\source\repos\WSR16\WSR16\App.xaml
-6-372221069
-
-111339036887
-13-1505183044
-MainWindow.xaml;Pages\BackPage.xaml;Pages\EndRegistrationAsRunner.xaml;Pages\LoginPage.xaml;Pages\MainPage.xaml;Pages\RegAsRunnerPage.xaml;
+C:\src\WSR16\WSR16\WSR16\App.xaml
+14924009816
+21750853300
+40-2015035441
+18-1226289494
+MainWindow.xaml;Pages\AdministratorMenu.xaml;Pages\BackPage.xaml;Pages\CoordinatorMenu.xaml;Pages\EndRegistrationAsRunner.xaml;Pages\ListOfCharities.xaml;Pages\LoginPage.xaml;Pages\MainPage.xaml;Pages\MoreInformation.xaml;Pages\RegAsRunnerPage.xaml;Pages\RunnerMenu.xaml;Pages\SponsorARunner.xaml;Pages\SponsorshipConfirmation.xaml;Windows\ContactInfo.xaml;
 
 True
 

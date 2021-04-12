@@ -1,0 +1,29 @@
+﻿<Page x:Class="WSR16.Pages.SponsorshipConfirmation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSR16.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SponsorshipConfirmation">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Спасибо за вашу спонсорскую поддержку!" Margin="0 20 0 20" FontSize="30"/>
+            <TextBlock Text="Спасибо за поддержку бегуна в Marathon Skills 2016!" HorizontalAlignment="Center"/>
+            <TextBlock Text="Ваше пожертвование пойдет в его благотворительную организацию" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            <TextBlock Text="/Участник(/Код участника/)/ из /Страны/" FontSize="25"/>
+            <TextBlock Text="/Фонд участника/" TextAlignment="Center" FontSize="20" Margin="0 20 0 20"/>
+            <TextBlock Text="$Сумма" FontSize="40" TextAlignment="Center"/>
+        </StackPanel>
+        <Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Назад" Width="60" Height="30"/>
+    </Grid>
+</Page>

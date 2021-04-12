@@ -1,0 +1,83 @@
+﻿<Page x:Class="WSR16.Pages.SponsorARunner"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSR16.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SponsorARunner">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Спонсор бегуна" HorizontalAlignment="Center" FontSize="30" Margin="20"/>
+            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" Text="Пожалуйста выберите бегуна, которого вы хотели бы спонсировать и сумму, которую вы хотлеи бы спонсироать. Спасибо за вашу поддержку бегунов и их благотворительных учреждений"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Text="Информация о Спонсоре" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Text="Ваше имя:"/>
+                <TextBlock Grid.Row="2" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Text="Бегун:"/>
+                <TextBlock Grid.Row="3" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Text="Карта:"/>
+                <TextBlock Grid.Row="4" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Text="Номер карты#:"/>
+                <TextBlock Grid.Row="5" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Text="Срок действия:"/>
+                <TextBlock Grid.Row="6" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Text="CVC:"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Width="200" Height="30" HorizontalAlignment="Left"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Width="200" Height="30" HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Width="200" Height="30" HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Width="200" Height="30" HorizontalAlignment="Left"/>
+                <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Margin="5" Width="200" HorizontalAlignment="Left">
+                    <TextBox Height="30" Width="50" Margin="0 0 10 0"/>
+                    <TextBox Height="30" Width="75"/>
+                </StackPanel>
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Width="75" Height="30" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Благотворительность" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+                <TextBlock Grid.Row="1" Text="Фонд участника" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                <Button Grid.Row="1" Width="30" Height="30" Content="i" FontSize="20" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                <TextBlock Text="Сумма пожертвования" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+                <TextBlock Text="$Сумма" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
+                <StackPanel Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Width="40" Content="-" FontSize="15" FontWeight="Bold"/>
+                    <TextBox Width="120" Margin="10 0 10 0" TextAlignment="Center"/>
+                    <Button Width="40" Content="+" FontSize="15" FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Width="75" Height="30" Content="Заплатить" Margin="0 0 10 0"/>
+                    <Button Width="60" Height="30" Content="Отмена"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

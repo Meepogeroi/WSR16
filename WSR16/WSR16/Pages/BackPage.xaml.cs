@@ -23,7 +23,7 @@ namespace WSR16.Pages
         public BackPage()
         {
             InitializeComponent();
-            ForOtherPage.Navigate(new RegAsRunnerPage());
+            ForOtherPage.Navigate(new ListOfCharities());
         }
     }
 }
