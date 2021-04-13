@@ -5,5 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WSR16"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ShowsNavigationUI="False" MinHeight="600" MinWidth="900">
+        Title="MainWindow" Height="450" Width="800" ShowsNavigationUI="False" MinHeight="700" MinWidth="900">
 </NavigationWindow>

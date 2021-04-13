@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,13 @@ namespace WSR16.Pages
     /// </summary>
     public partial class ListOfCharities : Page
     {
+        DB db;
         public ListOfCharities()
         {
             InitializeComponent();
+            db = new DB();
+            charityOrgList.ItemsSource = db.Charity.ToList();
+            
         }
     }
 }

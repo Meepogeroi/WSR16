@@ -6,23 +6,28 @@
       xmlns:local="clr-namespace:WSR16.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EndRegistrationAsRunner">
+      Title="EndRegistrationAsRunner"
+      >
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="270"/>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20 0 20 0">
+        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20 0 20 0" Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Регистрация бегуна" HorizontalAlignment="Center" Margin="10" FontSize="25"/>
             <TextBlock Text="Пожалуйста заполните всю информацию, чтобы зарегистрироваться в качестве бегуна" TextWrapping="WrapWithOverflow" Margin="5"/>
         </StackPanel>
-        <Grid Grid.Row="1" Grid.Column="0">
+        <Grid Grid.Row="2" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -48,5 +53,44 @@
             <TextBox Grid.Column="1" Grid.Row="4" Height="30" Width="160" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <ComboBox Grid.Column="1" Grid.Row="5" Height="30" Width="130" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </Grid>
+        <Grid Grid.Row="2" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="LightGray" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="125" Height="150" >
+                <Image x:Name="RunnerPhoto"/>
+            </Border>
+            <TextBlock Grid.Row="1" Text="Фото файл:" VerticalAlignment="Bottom" Margin="15 0"/>
+            <TextBox Width="225" Height="30" Margin="5" Grid.Row="2" HorizontalAlignment="Left"/>
+            <Button Content="Просмотр..." Height="30" Width="125" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"/>
+            <Grid Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Дата рождения:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="30" Margin="5"/>
+                </StackPanel>
+                <TextBlock Text="Страна:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Grid.Row="1"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" Height="30" Width="200" HorizontalAlignment="Left" Margin="5"/>
+            </Grid>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Background="LightGray" Height="30" Width="125" Margin="0 0 20 0" Content="Регистрация"/>
+            <Button Background="LightGray" Height="30" Width="100" Content="Отмена"/>
+        </StackPanel>
     </Grid>
 </Page>

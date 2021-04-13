@@ -1,11 +1,11 @@
-﻿<Window x:Class="WSR16.Window.ContactInfo"
+﻿<Window x:Class="WSR16.WindFolder.DopInfoWind"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WSR16.Window"
+        xmlns:local="clr-namespace:WSR16.WindFolder"
         mc:Ignorable="d"
-        Title="ContactInfo" Height="400" Width="600"
+        Title="DopInfoWind" Height="400" Width="600"
         ResizeMode="NoResize">
     <Grid>
         <StackPanel>

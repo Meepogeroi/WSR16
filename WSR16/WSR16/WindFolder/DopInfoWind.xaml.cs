@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WSR16.Window
+namespace WSR16.WindFolder
 {
     /// <summary>
-    /// Логика взаимодействия для ContactInfo.xaml
+    /// Логика взаимодействия для DopInfoWind.xaml
     /// </summary>
-    public partial class ContactInfo
+    public partial class DopInfoWind : Window
     {
-        public ContactInfo()
+        public DopInfoWind()
         {
             InitializeComponent();
         }

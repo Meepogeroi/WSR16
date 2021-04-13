@@ -9,6 +9,7 @@
     <Property Name="CharityDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="CharityLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Registration" Relationship="Self.FK__Registrat__Chari__7E02B4CC" FromRole="Charity" ToRole="Registration" />
+    <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
@@ -70,7 +71,7 @@
     </Key>
     <Property Name="PositionId" Type="Int32" Nullable="false" />
     <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PositionDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PositionDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PayPeriod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="PayRate" Type="Double" Nullable="false" />
     <NavigationProperty Name="Staff" Relationship="Self.FK_Staff_Position" FromRole="Position" ToRole="Staff" />
@@ -166,7 +167,7 @@
     <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="PositionId" Type="Int32" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Comments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Position" Relationship="Self.FK_Staff_Position" FromRole="Staff" ToRole="Position" />
     <NavigationProperty Name="Timesheet" Relationship="Self.FK_Timesheet_Staff" FromRole="Staff" ToRole="Timesheet" />
   </EntityType>
@@ -176,8 +177,8 @@
     </Key>
     <Property Name="TimesheetId" Type="Int32" Nullable="false" />
     <Property Name="StaffId" Type="Int32" Nullable="false" />
-    <Property Name="StartDateTime" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="EndDateTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StartDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDateTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="PayAmount" Type="Double" Nullable="false" />
     <NavigationProperty Name="Staff" Relationship="Self.FK_Timesheet_Staff" FromRole="Timesheet" ToRole="Staff" />
   </EntityType>

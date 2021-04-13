@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище nikitaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище nikitaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Charity">
           <Key>
             <PropertyRef Name="CharityId" />
@@ -12,6 +12,7 @@
           <Property Name="CharityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CharityName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="CharityDescription" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Logo" Type="varbinary(max)" />
           <Property Name="CharityLogo" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Country">
@@ -63,7 +64,7 @@
           </Key>
           <Property Name="PositionId" Type="int" Nullable="false" />
           <Property Name="PositionName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PositionDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PositionDescription" Type="nvarchar(max)" />
           <Property Name="PayPeriod" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PayRate" Type="float" Nullable="false" />
         </EntityType>
@@ -142,7 +143,7 @@
           <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="PositionId" Type="int" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Comments" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Timesheet">
           <Key>
@@ -150,8 +151,8 @@
           </Key>
           <Property Name="TimesheetId" Type="int" Nullable="false" />
           <Property Name="StaffId" Type="int" Nullable="false" />
-          <Property Name="StartDateTime" Type="date" Nullable="false" />
-          <Property Name="EndDateTime" Type="date" Nullable="false" />
+          <Property Name="StartDateTime" Type="datetime" Nullable="false" />
+          <Property Name="EndDateTime" Type="datetime" Nullable="false" />
           <Property Name="PayAmount" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
@@ -482,8 +483,7 @@
             <End Role="Timesheet" EntitySet="Timesheet" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="nikitaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -496,6 +496,7 @@
           <Property Name="CharityDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="CharityLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Registration" Relationship="Self.FK__Registrat__Chari__7E02B4CC" FromRole="Charity" ToRole="Registration" />
+          <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -557,7 +558,7 @@
           </Key>
           <Property Name="PositionId" Type="Int32" Nullable="false" />
           <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PositionDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PositionDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PayPeriod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PayRate" Type="Double" Nullable="false" />
           <NavigationProperty Name="Staff" Relationship="Self.FK_Staff_Position" FromRole="Position" ToRole="Staff" />
@@ -653,7 +654,7 @@
           <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="PositionId" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Comments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Staff_Position" FromRole="Staff" ToRole="Position" />
           <NavigationProperty Name="Timesheet" Relationship="Self.FK_Timesheet_Staff" FromRole="Staff" ToRole="Timesheet" />
         </EntityType>
@@ -663,8 +664,8 @@
           </Key>
           <Property Name="TimesheetId" Type="Int32" Nullable="false" />
           <Property Name="StaffId" Type="Int32" Nullable="false" />
-          <Property Name="StartDateTime" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="EndDateTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StartDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="PayAmount" Type="Double" Nullable="false" />
           <NavigationProperty Name="Staff" Relationship="Self.FK_Timesheet_Staff" FromRole="Timesheet" ToRole="Staff" />
         </EntityType>
@@ -1009,6 +1010,7 @@
           <EntitySetMapping Name="Charity">
             <EntityTypeMapping TypeName="nikitaModel.Charity">
               <MappingFragment StoreEntitySet="Charity">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
                 <ScalarProperty Name="CharityId" ColumnName="CharityId" />
                 <ScalarProperty Name="CharityName" ColumnName="CharityName" />
                 <ScalarProperty Name="CharityDescription" ColumnName="CharityDescription" />

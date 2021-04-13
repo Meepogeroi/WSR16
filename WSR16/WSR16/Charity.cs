@@ -24,6 +24,7 @@ namespace WSR16
         public string CharityName { get; set; }
         public string CharityDescription { get; set; }
         public string CharityLogo { get; set; }
+        public byte[] Logo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Registration> Registration { get; set; }

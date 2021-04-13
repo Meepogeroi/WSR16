@@ -23,7 +23,25 @@ namespace WSR16.Pages
         public BackPage()
         {
             InitializeComponent();
-            ForOtherPage.Navigate(new ListOfCharities());
+            ForOtherPage.Navigate(new ChartsTestPrac());
+            Manager.MainFrame = ForOtherPage;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            ForOtherPage.GoBack();
+        }
+
+        private void ForOtherPage_ContentRendered(object sender, EventArgs e)
+        {
+            if (!ForOtherPage.CanGoBack)
+            {
+                BackButton.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                BackButton.Visibility = Visibility.Visible;
+            };
         }
     }
 }

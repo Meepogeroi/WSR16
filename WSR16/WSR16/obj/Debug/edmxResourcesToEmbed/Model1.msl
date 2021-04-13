@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Charity">
       <EntityTypeMapping TypeName="nikitaModel.Charity">
         <MappingFragment StoreEntitySet="Charity">
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
           <ScalarProperty Name="CharityId" ColumnName="CharityId" />
           <ScalarProperty Name="CharityName" ColumnName="CharityName" />
           <ScalarProperty Name="CharityDescription" ColumnName="CharityDescription" />

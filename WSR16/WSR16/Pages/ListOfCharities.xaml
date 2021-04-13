@@ -17,16 +17,28 @@
             <TextBlock Text="Список благотворительных организаций" Margin="20" HorizontalAlignment="Center" FontSize="25"/>
             <TextBlock TextAlignment="Center" Text="Это - список всех благотворительных учреждений, которые поддерживаются в Marathon Skills 2016. Спасибо за помощь, вы поддерживаете их, спонсируя бегунов!" TextWrapping="WrapWithOverflow"/>
         </StackPanel>
-        <ListView Grid.Row="2">
-            <DataTemplate>
-                <StackPanel Orientation="Horizontal">
-                    <Image/>
-                    <StackPanel>
-                        <TextBlock FontSize="15" Text="asd"/>
-                        <TextBlock FontSize="10" Text="asd"/>
+        <ListView Grid.Row="2" x:Name="charityOrgList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="125"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="{Binding Path=CharityLogo}" x:Name="asd"/>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding CharityName}" Grid.Row="0"/>
+                                <TextBlock Text="{Binding CharityDescription}" Grid.Row="1" TextWrapping="WrapWithOverflow"/>
+                            </Grid>
+                        </Grid>
                     </StackPanel>
-                </StackPanel>
-            </DataTemplate>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>

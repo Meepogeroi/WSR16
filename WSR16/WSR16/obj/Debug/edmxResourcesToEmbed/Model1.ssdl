@@ -7,6 +7,7 @@
     <Property Name="CharityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CharityName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="CharityDescription" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Logo" Type="varbinary(max)" />
     <Property Name="CharityLogo" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Country">
@@ -58,7 +59,7 @@
     </Key>
     <Property Name="PositionId" Type="int" Nullable="false" />
     <Property Name="PositionName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="PositionDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PositionDescription" Type="nvarchar(max)" />
     <Property Name="PayPeriod" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="PayRate" Type="float" Nullable="false" />
   </EntityType>
@@ -137,7 +138,7 @@
     <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="PositionId" Type="int" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Comments" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Timesheet">
     <Key>
@@ -145,8 +146,8 @@
     </Key>
     <Property Name="TimesheetId" Type="int" Nullable="false" />
     <Property Name="StaffId" Type="int" Nullable="false" />
-    <Property Name="StartDateTime" Type="date" Nullable="false" />
-    <Property Name="EndDateTime" Type="date" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EndDateTime" Type="datetime" Nullable="false" />
     <Property Name="PayAmount" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="User">

@@ -60,7 +60,6 @@ C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\MoreInformation.g.cs
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\RunnerMenu.g.cs
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\SponsorARunner.g.cs
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\SponsorshipConfirmation.g.cs
-C:\src\WSR16\WSR16\WSR16\obj\Debug\Windows\ContactInfo.g.cs
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\AdministratorMenu.baml
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\CoordinatorMenu.baml
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\ListOfCharities.baml
@@ -68,4 +67,9 @@ C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\MoreInformation.baml
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\RunnerMenu.baml
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\SponsorARunner.baml
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\SponsorshipConfirmation.baml
-C:\src\WSR16\WSR16\WSR16\obj\Debug\Windows\ContactInfo.baml
+C:\src\WSR16\WSR16\WSR16\obj\Debug\WindFolder\DopInfoWind.g.cs
+C:\src\WSR16\WSR16\WSR16\obj\Debug\WindFolder\DopInfoWind.baml
+C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\RegisterForEvent.g.cs
+C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\RegisterForEvent.baml
+C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\ChartsTestPrac.g.cs
+C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\ChartsTestPrac.baml
