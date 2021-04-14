@@ -41,6 +41,7 @@
         <AssociationConnector Association="nikitaModel.FK__User__RoleId__74794A92" ManuallyRouted="false" />
         <AssociationConnector Association="nikitaModel.FK__Runner__Email__756D6ECB" ManuallyRouted="false" />
         <AssociationConnector Association="nikitaModel.FK_Timesheet_Staff" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="nikitaModel.Blood" Width="1.5" PointX="10.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -16,11 +16,13 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Пользователь:" Width="125" Margin="5" VerticalAlignment="Center" TextAlignment="Right"></TextBlock>
-            <ComboBox x:Name="ComboUsers" SelectedIndex="0" Width="175" Margin="5" DisplayMemberPath="FIO" SelectionChanged="ComboUsers_SelectionChanged"></ComboBox>
+            <ComboBox x:Name="ComboUsers" SelectedIndex="0" Width="175" Margin="5" SelectionChanged="ComboUsers_SelectionChanged"></ComboBox>
             <TextBlock Text="Тип диаграммы:" Width="125" Margin="5" VerticalAlignment="Center" TextAlignment="Right"></TextBlock>
             <ComboBox x:Name="ComboChartTypes" SelectedIndex="0" Width="175" Margin="5" SelectionChanged="ComboUsers_SelectionChanged"></ComboBox>
+            <Button Content="Print" x:Name="printChartButton" Click="printChartButton_Click"/>
+            <Button Content="Save" x:Name="SaveChartButton" Click="SaveChartButton_Click"/>
         </StackPanel>
-        <WindowsFormsHost Grid.Row="1" Margin="5">
+        <WindowsFormsHost Grid.Row="1" Margin="5" Width="790" Height="400">
             <charts:Chart x:Name="ChartsTestVar">
                 <charts:Chart.Legends>
                     <charts:Legend>

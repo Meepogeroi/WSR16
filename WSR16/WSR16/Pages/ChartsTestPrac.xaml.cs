@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms.DataVisualization;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.IO;
 
 namespace WSR16.Pages
 {
@@ -33,27 +34,69 @@ namespace WSR16.Pages
                 IsValueShownAsLabel = true
             };
             ChartsTestVar.Series.Add(currentSome);
-            ComboUsers.ItemsSource = db.Registration.ToList();
+            ComboUsers.ItemsSource = db.Blood.ToList();
             ComboChartTypes.ItemsSource = Enum.GetValues(typeof(SeriesChartType));
         }
 
         private void ComboUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ComboUsers.SelectedItem is Registration currentReg &&
+            if (ComboUsers.SelectedItem is Blood currentEvent &&
                 ComboChartTypes.SelectedItem is SeriesChartType currentType)
             {
                 Series currentSeries = ChartsTestVar.Series.FirstOrDefault();
                 currentSeries.ChartType = currentType;
                 currentSeries.Points.Clear();
-
-                var categoriesList = db.Registration.ToList();
-                foreach (var category in categoriesList) 
+                
+                var categoriesList = db.Blood.ToList();
+                SortedDictionary<DateTime, double> dateDict = new SortedDictionary<DateTime, double> { };
+                foreach (var element in categoriesList)
                 {
-                    currentSeries.Points.AddXY(category.Runner,
-                        db.Registration.ToList().Where(p=> p.Runner == currentReg.Runner
-                        && p.Cost == category.Cost).Sum(p=> p.Cost * p.CharityId));
+                    if (!dateDict.ContainsKey(element.DateAndTime.Value))
+                    {
+                        double schet = 0;
+                        double sum = 0;
+                        foreach (var dateElement in categoriesList)
+                        {
+                            if(dateElement.DateAndTime == element.DateAndTime)
+                            {
+                                sum += dateElement.Barcode;
+                                schet++;
+                            }
+                        }
+                        dateDict.Add(element.DateAndTime.Value, sum / schet);
+                    }
+                }
+                foreach (var category in dateDict)
+                {
+                    currentSeries.Points.AddXY(category.Key,
+                        category.Value);
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            /*foreach (Blood el in db.Blood.ToList()) {
+                System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+                dtDateTime = dtDateTime.AddMilliseconds(el.tmpDate).ToLocalTime();
+                el.DateAndTime = dtDateTime;
+            }
+            db.SaveChanges();*/
+        }
+
+        private void printChartButton_Click(object sender, RoutedEventArgs e)
+        {
+            PrintingManager printing = ChartsTestVar.Printing;
+            printing.PrintPreview();
+            printing.Print(true);
+
+            var asd = printing.PrintDocument;
+        }
+
+        private void SaveChartButton_Click(object sender, RoutedEventArgs e)
+        {
+            FileStream stream = new FileStream($@"C:\Users\User\Desktop\ChartImage", FileMode.Create);
+            ChartsTestVar.SaveImage(stream, ChartImageFormat.Png);
         }
     }
 }

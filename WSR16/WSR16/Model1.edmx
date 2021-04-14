@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище nikitaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blood">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Barcode" Type="bigint" Nullable="false" />
+          <Property Name="tmpDate" Type="bigint" Nullable="false" />
+          <Property Name="DateAndTime" Type="datetime" />
+        </EntityType>
         <EntityType Name="Charity">
           <Key>
             <PropertyRef Name="CharityId" />
@@ -392,6 +402,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище nikitaModelContainer">
+          <EntitySet Name="Blood" EntityType="Self.Blood" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="Charity" EntityType="Self.Charity" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="Event" EntityType="Self.Event" Schema="db_owner" store:Type="Tables" />
@@ -1000,7 +1011,18 @@
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Timesheet" EntitySet="Timesheet" />
           </AssociationSet>
+          <EntitySet Name="Blood" EntityType="nikitaModel.Blood" />
         </EntityContainer>
+        <EntityType Name="Blood">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="Barcode" Type="Int64" Nullable="false" />
+          <Property Name="tmpDate" Type="Int64" Nullable="false" />
+          <Property Name="DateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1192,6 +1214,17 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blood">
+            <EntityTypeMapping TypeName="nikitaModel.Blood">
+              <MappingFragment StoreEntitySet="Blood">
+                <ScalarProperty Name="DateAndTime" ColumnName="DateAndTime" />
+                <ScalarProperty Name="tmpDate" ColumnName="tmpDate" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

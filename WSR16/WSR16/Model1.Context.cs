@@ -43,5 +43,6 @@ namespace WSR16
         public virtual DbSet<Timesheet> Timesheet { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Volunteer> Volunteer { get; set; }
+        public virtual DbSet<Blood> Blood { get; set; }
     }
 }

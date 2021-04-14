@@ -513,5 +513,16 @@
       <End Role="Staff" EntitySet="Staff" />
       <End Role="Timesheet" EntitySet="Timesheet" />
     </AssociationSet>
+    <EntitySet Name="Blood" EntityType="nikitaModel.Blood" />
   </EntityContainer>
+  <EntityType Name="Blood">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="PatientId" Type="Int32" Nullable="false" />
+    <Property Name="Barcode" Type="Int64" Nullable="false" />
+    <Property Name="tmpDate" Type="Int64" Nullable="false" />
+    <Property Name="DateAndTime" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>
