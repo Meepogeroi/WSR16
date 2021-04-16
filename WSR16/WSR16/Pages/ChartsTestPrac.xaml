@@ -21,11 +21,11 @@
             <TextBlock Text="Тип диаграммы:" Width="125" Margin="5" VerticalAlignment="Center" TextAlignment="Right"></TextBlock>
             <ComboBox x:Name="ComboChartTypes" SelectedIndex="0" Width="175" Margin="5" SelectionChanged="ComboUsers_SelectionChanged"></ComboBox>
             <Button Content="Print" x:Name="printChartButton" Click="printChartButton_Click"/>
-            <Button Content="Save" x:Name="SaveChartButton" Click="SaveChartButton_Click"/>
+            <Button Content="Save" x:Name="SaveChartButton" Click="SaveChartButton_ClickAsync"/>
         </StackPanel>
         <DataGrid x:Name="dataGridInfo" Grid.Row="1">
         </DataGrid>
-        <WindowsFormsHost Grid.Row="2" Margin="5" Width="790" Height="400">
+        <WindowsFormsHost Grid.Row="2" Margin="5" Width="400" Height="400" HorizontalAlignment="Left">
             <charts:Chart x:Name="ChartsTestVar">
                 <charts:Chart.Legends>
                     <charts:Legend>
@@ -34,5 +34,6 @@
                 </charts:Chart.Legends>
             </charts:Chart>
         </WindowsFormsHost>
+        <ProgressBar Grid.Row="2" Width="200" Height="40" HorizontalAlignment="Right" Margin="40" Maximum="100" x:Name="prgBar" Minimum="0"/>
     </Grid>
 </Page>

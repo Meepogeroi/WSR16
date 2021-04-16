@@ -41,6 +41,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -105,6 +108,7 @@
     <Compile Include="Pages\CoordinatorMenu.xaml.cs">
       <DependentUpon>CoordinatorMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\GetClass.cs" />
     <Compile Include="Pages\ListOfCharities.xaml.cs">
       <DependentUpon>ListOfCharities.xaml</DependentUpon>
     </Compile>
@@ -126,6 +130,8 @@
     <Compile Include="Position.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="PostClass.cs" />
+    <Compile Include="ProgressClass.cs" />
     <Compile Include="RaceKitOption.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

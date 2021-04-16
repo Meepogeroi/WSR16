@@ -18,6 +18,9 @@ using System.IO;
 using System.IO.Packaging;
 using Microsoft.Win32;
 using Word = Microsoft.Office.Interop.Word;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Windows.Threading;
 
 namespace WSR16.Pages
 {
@@ -40,6 +43,7 @@ namespace WSR16.Pages
             ComboUsers.ItemsSource = db.Blood.ToList();
             ComboChartTypes.ItemsSource = Enum.GetValues(typeof(SeriesChartType));
             dataGridInfo.ItemsSource = db.Country.ToList();
+            client.BaseAddress = new Uri("http://localhost:5000");
         }
 
         private void ComboUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -113,27 +117,44 @@ namespace WSR16.Pages
             return buffer;
         }
 
-        private void SaveChartButton_Click(object sender, RoutedEventArgs e)
-        {
-            var dlg = new PrintDialog();
-            dlg.PageRangeSelection = PageRangeSelection.AllPages;
-            dlg.UserPageRangeEnabled = false;
-            if (dlg.ShowDialog() == true)
-            {
-                var doc = new FlowDocument();
+        HttpClient client = new HttpClient();
+        DispatcherTimer dispatcherTime = new DispatcherTimer();
 
-                doc.ColumnWidth = dlg.PrintableAreaWidth;
-                doc.Blocks.Add(new Paragraph(new Run("Some try print chart and info")));
-                BitmapImage bimg = new BitmapImage();
-                Image image = new Image();
-                bimg.BeginInit();
-                bimg.UriSource = new Uri(@"C:\Users\User\Desktop\ChartImage.png", UriKind.RelativeOrAbsolute);
-                bimg.EndInit();
-                image.Source = bimg;
-                doc.Blocks.Add(new BlockUIContainer(image));
-                var some = dataGridInfo;
-                doc.Blocks.Add(new BlockUIContainer(dataGridInfo));
-                dlg.PrintDocument(((IDocumentPaginatorSource)doc).DocumentPaginator, "Simple");
+        private async void SaveChartButton_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            var x = client.GetAsync("/api/analyzer/Biorad");
+            var resp = await x.Result.Content.ReadAsStringAsync();
+            var listSevice = new List<ServiceCode>();
+            listSevice.Add(new ServiceCode(287));
+            var serv = new PostClass() { patient = "1", services = listSevice };
+            var json = JsonConvert.SerializeObject(serv);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            //{ “patient”: “{id}”, “services”: [{ “serviceCode”: 000 }, { “serviceCode”: 000}, ….] }
+            var response = await client.PostAsync("/api/analyzer/Biorad", content);
+            string servBack = await response.Content.ReadAsStringAsync();
+            dispatcherTime.Tick += tickEventAsync;
+            dispatcherTime.Interval = new TimeSpan(0,0,0,0,20);
+            dispatcherTime.Start();
+        }
+
+        private async void tickEventAsync(object sender, object e)
+        {
+            var x = client.GetAsync("/api/analyzer/Biorad");
+            var sf = await x.Result.Content.ReadAsStringAsync();
+            if ((int)x.Result.StatusCode == 400)
+            {
+                Console.WriteLine("Nouse");
+            }
+            else if (sf.Contains("progress"))
+            {
+                var prg = JsonConvert.DeserializeObject<ProgressClass>(sf);
+                Console.WriteLine(prg.progress);
+                prgBar.Value = prg.progress;
+            }
+            else
+            {
+                prgBar.Value = 100;
+                dispatcherTime.Stop();
             }
         }
     }

@@ -74,3 +74,5 @@ C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\RegisterForEvent.baml
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\ChartsTestPrac.g.cs
 C:\src\WSR16\WSR16\WSR16\obj\Debug\Pages\ChartsTestPrac.baml
 C:\src\WSR16\WSR16\WSR16\obj\Debug\WSR16.csproj.ResolveComReference.cache
+C:\src\WSR16\WSR16\WSR16\bin\Debug\Newtonsoft.Json.dll
+C:\src\WSR16\WSR16\WSR16\bin\Debug\Newtonsoft.Json.xml
